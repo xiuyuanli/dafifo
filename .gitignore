@@ -1,0 +1,8 @@
+.log/
+.idea/
+node_modules/
+public/build/
+dafifo/node_modules/
+dafifo/public/build/
+.DS_Store
+.DS_Store?
