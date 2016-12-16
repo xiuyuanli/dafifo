@@ -1,0 +1,16 @@
+[{
+    "text" : "员工管理",
+    "class" : "app-class-one-icon app-payment-icon"
+},{
+    "text" : "用户管理",
+    "class" : "app-class-one-icon app-settings-icon"
+},{
+    "text" : "角色管理",
+    "class" : "app-class-one-icon app-reports-icon"
+},{
+    "text" : "打印",
+    "class" : " app-class-one-icon app-printers-icon"
+},{
+    "text" : "系统信息",
+    "class" : "app-class-one-icon app-helps-icon"
+}]

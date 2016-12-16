@@ -1,0 +1,62 @@
+[{
+    "name" : "node1",
+    "text" : "权限应用",
+    "leaf" : false,
+    "children" : [{
+      "name" : "node1",
+      "text" : "员工管理"
+     },{
+      "name" : "node1",
+      "text" : "用户管理"
+    },{
+      "name" : "node1",
+      "text" : "角色管理"
+    },{
+      "name" : "node1",
+      "text" : "组织机构"
+    },{
+      "name" : "node1",
+      "text" : "用户权限控制"
+    },{
+      "name" : "node1",
+      "text" : "角色权限控制"
+    },{
+      "name" : "node1",
+      "text" : "系统接口控制"
+    },{
+      "name" : "node1",
+      "text" : "系统访问控制"
+    }]
+},{
+  "name" : "node2",
+  "text" : "系统应用",
+  "leaf" : false,
+  "children" : [{
+    "name" : "node1",
+    "text" : "系统应用2"
+  }]
+},{
+  "name" : "node3",
+  "text" : "报表分析",
+  "leaf" : false,
+  "children" : [{
+    "name" : "node1",
+    "text" : "报表分析2"
+  }]
+},{
+  "name" : "node4",
+  "text" : "打印管理",
+  "leaf" : false,
+  "children" : [{
+    "name" : "node1",
+    "text" : "打印管理2"
+  }]
+},{
+  "name" : "node5",
+  "text" : "签核",
+  "leaf" : false,
+  "children" : [{
+    "name" : "node1",
+    "text" : "签核2"
+  }]
+}]

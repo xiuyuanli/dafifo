@@ -11,13 +11,13 @@
                 </div>
             </div>
             <div class="pull-right hidden-xs">
-                <div class="inline">
+                <div class="inline m-r-md">
                     <span class="sys-opera-span"><i class="icon-home"></i>&nbsp;首页信息</span>
                 </div>
-                <div class="inline">
+                <div class="inline m-r-md">
                     <span class="sys-opera-span"><i class="icon-settings"></i>&nbsp;控制面板</span>
                 </div>
-                <div class="inline">
+                <div class="inline m-r-md">
                     <span class="sys-opera-span"><i class="icon-power"></i>&nbsp;安全退出</span>
                 </div>
             </div>
@@ -39,97 +39,22 @@
                     欢迎您, Warren【admin】
                 </div>
                 <ul class="nav nav-bg col-sm-6">
-                    <li class="">
-                        <a href="" class="auto">
+                    <li ng-mouseover="nodeHoverEvent(parentNode)" class="" ng-repeat="parentNode in nodeArray">
+                        <a href=""  class="auto">
                           <span class="pull-right text-muted">
                             <i class="fa fa-fw fa-angle-right text"></i>
                             <i class="fa fa-fw fa-angle-down text-active"></i>
                           </span>
                           <i class="glyphicon glyphicon-th"></i>
-                          <span>权限应用</span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="" class="auto">
-                          <span class="pull-right text-muted">
-                            <i class="fa fa-fw fa-angle-right text"></i>
-                            <i class="fa fa-fw fa-angle-down text-active"></i>
-                          </span>
-                            <i class="glyphicon glyphicon-th"></i>
-                            <span>系统应用</span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="" class="auto">
-                          <span class="pull-right text-muted">
-                            <i class="fa fa-fw fa-angle-right text"></i>
-                            <i class="fa fa-fw fa-angle-down text-active"></i>
-                          </span>
-                            <i class="glyphicon glyphicon-th"></i>
-                            <span>报表分析</span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="" class="auto">
-                          <span class="pull-right text-muted">
-                            <i class="fa fa-fw fa-angle-right text"></i>
-                            <i class="fa fa-fw fa-angle-down text-active"></i>
-                          </span>
-                            <i class="glyphicon glyphicon-th"></i>
-                            <span>打印管理</span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="" class="auto">
-                          <span class="pull-right text-muted">
-                            <i class="fa fa-fw fa-angle-right text"></i>
-                            <i class="fa fa-fw fa-angle-down text-active"></i>
-                          </span>
-                            <i class="glyphicon glyphicon-th"></i>
-                            <span>签&nbsp;&nbsp;&nbsp;&nbsp;核</span>
+                          <span>{{parentNode.text}}</span>
                         </a>
                     </li>
                     <li class="line dk hidden-folded"></li>
                 </ul>
-                <ul class="nav nav-bg col-sm-6">
-                    <li class="">
+                <ul ng-show="childNodeArray && childNodeArray.length>0" class="nav nav-bg col-sm-6">
+                    <li class="" ng-repeat="childNode in childNodeArray">
                         <a href="" class="auto">
-                            <span>员工管理</span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="" class="auto">
-                            <span>用户管理</span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="" class="auto">
-                            <span>角色管理</span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="" class="auto">
-                            <span>组织机构</span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="" class="auto">
-                            <span>用户权限控制</span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="" class="auto">
-                            <span>角色权限控制</span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="" class="auto">
-                            <span>系统接口控制</span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="" class="auto">
-                            <span>系统访问控制</span>
+                            <span>{{childNode.text}}</span>
                         </a>
                     </li>
                     <li class="line dk hidden-folded"></li>
@@ -139,35 +64,11 @@
         </div>
         <div class="wrapper row dafifo-app-content">
             <div class="wrapper-md">
-                    <div class=" col-lg-1 col-md-3 col-sm-4 col-xs-6 wrapper-md main-app-content">
-                        <div class="col-center-block app-class-one-icon app-payment-icon">
+                    <div class=" col-lg-1 col-md-3 col-sm-4 col-xs-6 wrapper-md main-app-content" ng-repeat="app in appData">
+                        <div class="col-center-block {{ app.class }}">
 
                         </div>
-                        <span class="text-center ">员工管理</span>
-                    </div>
-                    <div class="col-lg-1 col-md-3 col-sm-4 col-xs-6 wrapper-md main-app-content">
-                        <div class="col-center-block app-class-one-icon app-settings-icon">
-
-                        </div>
-                        <span class="text-center">用户管理</span>
-                    </div>
-                    <div class="col-lg-1 col-md-3 col-sm-4 col-xs-6 wrapper-md main-app-content">
-                        <div class="col-center-block app-class-one-icon app-reports-icon">
-
-                        </div>
-                        <span class="text-center">角色管理</span>
-                    </div>
-                    <div class="col-lg-1 col-md-3 col-sm-4 col-xs-6 wrapper-md main-app-content">
-                        <div class="col-center-block app-class-one-icon app-printers-icon">
-
-                        </div>
-                        <span class="text-center">打印</span>
-                    </div>
-                    <div class="col-lg-1 col-md-3 col-sm-4 col-xs-6 wrapper-md main-app-content">
-                        <div class="col-center-block app-class-one-icon app-helps-icon">
-
-                        </div>
-                        <span class="text-center">系统信息</span>
+                        <span class="text-center ">{{app.text}}</span>
                     </div>
             </div>
         </div>
