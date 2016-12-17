@@ -11,15 +11,15 @@
         return factory(angular);
     }
 }(window.angular || null, function(angular) {
-    var app = angular.module('dafifo.mainboard.desktop', []);
+    var app = angular.module('dafifo.desktop', []);
 
-    app.controller('dafifo.mainboard.desktopController', ['$scope','dafifo.mainboard.desktopFactory',function($scope,fac) {
+    app.controller('dafifo.desktop.desktopController', ['$scope','dafifo.desktop.desktopFactory',function($scope,fac) {
         fac.getApps(function(data){
             $scope.appData = data;
         });
     }]);
 
-    app.factory('dafifo.mainboard.desktopFactory', ['$http',function($http){
+    app.factory('dafifo.desktop.desktopFactory', ['$http',function($http){
         return {
             getApps : function( callback ){
                 $http.get('/json/app-data.json').success(function(data, header, config, status){

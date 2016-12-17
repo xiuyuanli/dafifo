@@ -13,7 +13,7 @@ dafifoApp.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG', 'MODULE_C
                 url:"/desktop",
                 views:{
                     'mainboard@main':{
-                        controller:'dafifo.mainboard.desktopController',
+                        controller:'dafifo.desktop.desktopController',
                         templateUrl:"tpl/desktop.html"
                     }
                 },
