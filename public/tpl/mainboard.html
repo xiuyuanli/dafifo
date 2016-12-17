@@ -32,7 +32,7 @@
     <div id="content" class="app-content" >
         <div class="main-opera-content  b-b b-3x">
             <button class="hidden-xs btn m-b-xs w-xs btn-primary btn-rounded m-l-md" data-toggle="dropdown" aria-expanded="false">菜单<span class="caret"></span></button>
-            <button class="btn btn-default m-l-md menu-btn" >个人桌面</button>
+            <button class="btn btn-default m-l-md menu-btn" ui-sref=".desktop" >个人桌面</button>
             <!-- menu -->
             <div class="dropdown-menu row nav-bg">
                 <div class="wrapper b-b col-md-12 bg-light">
@@ -62,7 +62,8 @@
             </div>
             <!-- /menu -->
         </div>
-        <div class="wrapper row dafifo-app-content">
+        <div data-ui-view="desktop" class="wrapper dafifo-app-content" ></div>
+<!--        <div class="wrapper row dafifo-app-content">
             <div class="wrapper-md">
                     <div class=" col-lg-1 col-md-3 col-sm-4 col-xs-6 wrapper-md main-app-content" ng-repeat="app in appData">
                         <div class="col-center-block {{ app.class }}">
@@ -71,7 +72,7 @@
                         <span class="text-center ">{{app.text}}</span>
                     </div>
             </div>
-        </div>
+        </div>-->
     </div>
     <!-- /content -->
 

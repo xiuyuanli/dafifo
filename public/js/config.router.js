@@ -9,8 +9,17 @@ dafifoApp.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG', 'MODULE_C
                 templateUrl:'/tpl/mainboard.html',
                 controller:'dafifo.mainboard.mainboardController',
                 resolve: loadSequence(['dafifo.mainboard'])
+            }).state("main.desktop",{
+                url:"/desktop",
+                views:{
+                    'mainboard@main':{
+                        controller:'dafifo.mainboard.desktopController',
+                        templateUrl:"tpl/desktop.html"
+                    }
+                },
+                resolve: loadSequence(['dafifo.desktop'])
             });
-            
+
             function loadSequence(srcs, callback) {
                 return {
                     deps: ['$ocLazyLoad', '$q',
