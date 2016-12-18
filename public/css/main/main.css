@@ -36,6 +36,21 @@
 .nav-bg{
     background-color: #3a3f51;
 }
+.nav-mwidth{
+    min-width: 350px;
+}
+
+.mainboard-nav .close{
+    display: none;
+}
+
+.mainboard-nav .active .close{
+    position: absolute;
+    right: 4px;
+    top: 0;
+    color: red;
+    display: block;
+}
 
 .nav-bg > li:hover  > a {
     color: #ffffff;

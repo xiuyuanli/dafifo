@@ -30,37 +30,49 @@
 
     <!-- content -->
     <div id="content" class="app-content" >
-        <div class="main-opera-content  b-b b-3x">
-            <button class="hidden-xs btn m-b-xs w-xs btn-primary btn-rounded m-l-md" data-toggle="dropdown" aria-expanded="false">菜单<span class="caret"></span></button>
-            <button class="btn btn-default m-l-md menu-btn" ui-sref=".desktop" >个人桌面</button>
-            <!-- menu -->
-            <div class="dropdown-menu row nav-bg">
-                <div class="wrapper b-b col-md-12 bg-light">
-                    欢迎您, Warren【admin】
-                </div>
-                <ul class="nav nav-bg col-sm-6">
-                    <li ng-mouseover="nodeHoverEvent(parentNode)" class="" ng-repeat="parentNode in nodeArray">
-                        <a href=""  class="auto">
+        <div class="main-opera-content">
+            <ul class="nav nav-tabs b-3x mainboard-nav">
+                <li class="m-r-md">
+                    <button class="hidden-xs btn m-b-xs w-xs btn-primary btn-rounded m-l-md" data-toggle="dropdown" aria-expanded="false">菜单<span class="caret"></span></button>
+                    <!-- menu -->
+                    <div class="dropdown-menu row nav-bg nav-mwidth">
+                        <div class="wrapper b-b col-md-12 bg-light">
+                            欢迎您, Warren【admin】
+                        </div>
+                        <ul class="nav nav-bg col-sm-6">
+                            <li ng-mouseover="nodeHoverEvent(parentNode)" class="" ng-repeat="parentNode in nodeArray">
+                                <a href=""  class="auto">
                           <span class="pull-right text-muted">
                             <i class="fa fa-fw fa-angle-right text"></i>
                             <i class="fa fa-fw fa-angle-down text-active"></i>
                           </span>
-                          <i class="glyphicon glyphicon-th"></i>
-                          <span>{{parentNode.text}}</span>
-                        </a>
-                    </li>
-                    <li class="line dk hidden-folded"></li>
-                </ul>
-                <ul ng-show="childNodeArray && childNodeArray.length>0" class="nav nav-bg col-sm-6">
-                    <li class="" ng-repeat="childNode in childNodeArray">
-                        <a href="" class="auto">
-                            <span>{{childNode.text}}</span>
-                        </a>
-                    </li>
-                    <li class="line dk hidden-folded"></li>
-                </ul>
-            </div>
-            <!-- /menu -->
+                                    <i class="glyphicon glyphicon-th"></i>
+                                    <span>{{parentNode.text}}</span>
+                                </a>
+                            </li>
+                            <li class="line dk hidden-folded"></li>
+                        </ul>
+                        <ul ng-show="childNodeArray && childNodeArray.length>0" class="nav nav-bg col-sm-6">
+                            <li class="" ng-repeat="childNode in childNodeArray">
+                                <a href="" class="auto">
+                                    <span>{{childNode.text}}</span>
+                                </a>
+                            </li>
+                            <li class="line dk hidden-folded"></li>
+                        </ul>
+                    </div>
+                    <!-- /menu -->
+                </li>
+                <li class="active" ui-sref=".desktop" ><a href="##" data-toggle="tab">个人桌面</a></li>
+                <li class="m-l-md">
+                    <a href="#" data-toggle="tab">
+                        <span>员工管理</span>
+                    </a>
+                    <button type="button" ng-class="" class="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </li>
+            </ul>
         </div>
         <div data-ui-view="mainboard" class="wrapper dafifo-app-content" ></div>
     </div>
