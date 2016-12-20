@@ -18,6 +18,15 @@ dafifoApp.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG', 'MODULE_C
                     }
                 },
                 resolve: loadSequence(['dafifo.desktop'])
+            }).state("main.module",{
+                url:"/module",
+                views:{
+                    'mainboard@main':{
+                        controller:'dafifo.module.moduleController',
+                        templateUrl:"tpl/permission/module.html"
+                    }
+                },
+                resolve: loadSequence(['dafifo.module'])
             });
 
             function loadSequence(srcs, callback) {

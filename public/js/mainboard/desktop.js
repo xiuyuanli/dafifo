@@ -13,10 +13,13 @@
 }(window.angular || null, function(angular) {
     var app = angular.module('dafifo.desktop', []);
 
-    app.controller('dafifo.desktop.desktopController', ['$scope','dafifo.desktop.desktopFactory',function($scope,fac) {
+    app.controller('dafifo.desktop.desktopController', ['$scope','$rootScope','$state','dafifo.desktop.desktopFactory',function($scope,$rootScope,$state,fac) {
         fac.getApps(function(data){
             $scope.appData = data;
         });
+        $scope.openApp = function(app){
+            $state.go(app.href);
+        };
     }]);
 
     app.factory('dafifo.desktop.desktopFactory', ['$http',function($http){

@@ -23,6 +23,13 @@ dafifoApp.constant('JQ_CONFIG', {
         files:[
             'js/mainboard/desktop.js'
         ]
+    },
+    {
+        name:"dafifo.module",
+        module:true,
+        files:[
+            'js/permission/module.js'
+        ]
     }
 ])
 .config(['$ocLazyLoadProvider', 'MODULE_CONFIG', function($ocLazyLoadProvider, MODULE_CONFIG) {

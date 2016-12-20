@@ -1,16 +1,25 @@
 [{
+    "text" : "模块管理",
+    "class" : "app-class-one-icon app-customers-icon",
+    "href" : "main.module"
+},{
     "text" : "员工管理",
-    "class" : "app-class-one-icon app-payment-icon"
+    "class" : "app-class-one-icon app-payment-icon",
+    "href" : "main.module"
 },{
     "text" : "用户管理",
-    "class" : "app-class-one-icon app-settings-icon"
+    "class" : "app-class-one-icon app-settings-icon",
+    "href" : "main.module"
 },{
     "text" : "角色管理",
-    "class" : "app-class-one-icon app-reports-icon"
+    "class" : "app-class-one-icon app-reports-icon",
+    "href" : "main.module"
 },{
     "text" : "打印",
-    "class" : " app-class-one-icon app-printers-icon"
+    "class" : " app-class-one-icon app-printers-icon",
+    "href" : "main.module"
 },{
     "text" : "系统信息",
-    "class" : "app-class-one-icon app-helps-icon"
+    "class" : "app-class-one-icon app-helps-icon",
+    "href" : "main.module"
 }]
