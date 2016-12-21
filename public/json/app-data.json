@@ -5,15 +5,15 @@
 },{
     "text" : "员工管理",
     "class" : "app-class-one-icon app-payment-icon",
-    "href" : "main.module"
+    "href" : "main.staff"
 },{
     "text" : "用户管理",
     "class" : "app-class-one-icon app-settings-icon",
-    "href" : "main.module"
+    "href" : "main.user"
 },{
     "text" : "角色管理",
     "class" : "app-class-one-icon app-reports-icon",
-    "href" : "main.module"
+    "href" : "main.role"
 },{
     "text" : "打印",
     "class" : " app-class-one-icon app-printers-icon",

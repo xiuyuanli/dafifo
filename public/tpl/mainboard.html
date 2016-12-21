@@ -63,12 +63,12 @@
                     </div>
                     <!-- /menu -->
                 </li>
-                <li class="active" ui-sref=".desktop" ><a href="##" data-toggle="tab">个人桌面</a></li>
-                <li class="m-l-md">
-                    <a href="#" data-toggle="tab">
-                        <span>员工管理</span>
+                <li ng-class="{true:'active',false:''}[activeApp == '']" ui-sref=".desktop" ><a href="##" >个人桌面</a></li>
+                <li class="m-l-md" ui-sref="{{table.href}}" ng-class="{true:'active',false:''}[activeApp == table.href]" ng-repeat="table in tableArray track by $index">
+                    <a href="#" >
+                        <span>{{table.text}}</span>
                     </a>
-                    <button type="button" ng-class="" class="close">
+                    <button type="button" ng-click="closeTable(table)" class="close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </li>

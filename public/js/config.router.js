@@ -11,6 +11,7 @@ dafifoApp.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG', 'MODULE_C
                 resolve: loadSequence(['dafifo.mainboard'])
             }).state("main.desktop",{
                 url:"/desktop",
+                cache:false,
                 views:{
                     'mainboard@main':{
                         controller:'dafifo.desktop.desktopController',
@@ -20,6 +21,7 @@ dafifoApp.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG', 'MODULE_C
                 resolve: loadSequence(['dafifo.desktop'])
             }).state("main.module",{
                 url:"/module",
+                cache:false,
                 views:{
                     'mainboard@main':{
                         controller:'dafifo.module.moduleController',
@@ -27,6 +29,16 @@ dafifoApp.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG', 'MODULE_C
                     }
                 },
                 resolve: loadSequence(['dafifo.module'])
+            }).state("main.user",{
+                url:"/user",
+                cache:false,
+                views:{
+                    'mainboard@main':{
+                        controller:'dafifo.user.userController',
+                        templateUrl:"tpl/permission/user.html"
+                    }
+                },
+                resolve: loadSequence(['dafifo.user'])
             });
 
             function loadSequence(srcs, callback) {

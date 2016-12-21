@@ -17,8 +17,9 @@
         fac.getApps(function(data){
             $scope.appData = data;
         });
+        $scope.$parent.activeApp  =  "";
         $scope.openApp = function(app){
-            $state.go(app.href);
+            $state.go(app.href,app);
         };
     }]);
 

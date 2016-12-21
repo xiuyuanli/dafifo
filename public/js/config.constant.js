@@ -30,6 +30,13 @@ dafifoApp.constant('JQ_CONFIG', {
         files:[
             'js/permission/module.js'
         ]
+    },
+    {
+        name:"dafifo.user",
+        module:true,
+        files:[
+            'js/permission/user.js'
+        ]
     }
 ])
 .config(['$ocLazyLoadProvider', 'MODULE_CONFIG', function($ocLazyLoadProvider, MODULE_CONFIG) {
