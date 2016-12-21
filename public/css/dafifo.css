@@ -20,3 +20,6 @@
     border-bottom: 1px solid #353535;
     font-family: 'Montserrat', sans-serif;
 }
+ul>li{
+    list-style: none;
+}
