@@ -25,7 +25,22 @@
         $scope.nodeHoverEvent = function(parentNode){
             $scope.childNodeArray = parentNode.children;
         };
-        $state.go('main.desktop');
+        if( $state.current.name== "main" )
+            $state.go('main.desktop');
+        $scope.activeApp  = "";
+        $scope.tableArray = [];
+        $scope.closeTable = function(app){
+            var index = $scope.tableArray.indexOf(app);
+            $scope.tableArray.splice(index,1);
+            if($scope.tableArray[index]){
+                $state.go($scope.tableArray[index].href);
+            }else if($scope.tableArray[index - 1]){
+                $state.go($scope.tableArray[index-1].href);
+            }else{
+                $state.go('main.desktop');
+            }
+        };
+
     }]);
 
     app.factory('dafifo.mainboard.mainboardFactory', ['$http',function($http){
