@@ -1,0 +1,118 @@
+.app-footer-span{
+    display: inline-block;
+    padding-right: 5px;
+    border-right: 2px #C1C1C1 solid;
+    color: #fff;
+}
+.content-bg{
+    background-image: -moz-linear-gradient( 135deg, rgb(244,202,216) 0%, rgb(129,112,137) 35%, rgb(14,21,58) 100%);
+    background-image: -webkit-linear-gradient( 135deg, rgb(244,202,216) 0%, rgb(129,112,137) 35%, rgb(14,21,58) 100%);
+    background-image: -ms-linear-gradient( 135deg, rgb(244,202,216) 0%, rgb(129,112,137) 35%, rgb(14,21,58) 100%);
+}
+.header-bg{
+    background-color: transparent !important;
+}
+.sys-name{
+    font-size: 25px;
+    color: #C1C1C1;
+}
+.sys-opera-span{
+    line-height: 40px;
+    cursor: pointer;
+    color : #FFF;
+    font-weight: bold;
+}
+.main-opera-content{
+    padding-top: 25px;
+    position: relative;
+}
+
+.menu-btn{
+    border-radius: 2px 2px 0 0;
+    margin-bottom: -3px;
+    background-color: #dee5e7;
+}
+
+.nav-bg{
+    background-color: #3a3f51;
+}
+.nav-mwidth{
+    min-width: 350px;
+}
+
+.mainboard-nav .close{
+    display: none;
+}
+
+.mainboard-nav .active .close{
+    position: absolute;
+    right: 4px;
+    top: 0;
+    color: red;
+    display: block;
+}
+
+.nav-bg > li:hover  > a {
+    color: #ffffff;
+    background-color: #2e3344;
+}
+
+.dafifo-app-content{
+    height: calc( 100% - 66px );
+}
+
+.main-app-content{
+    cursor: pointer;
+    text-align: center;
+}
+.main-app-content span{
+    line-height: 35px;
+    color : #FFF;
+}
+
+.col-center-block {
+     float: none;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     border-radius: 10px;
+     min-height: 70px;
+     width: 70px;
+}
+
+/** app icon  S**/
+.app-class-one-icon{
+    background: url("../../img/app-icon-05.png") no-repeat;
+    width: 70px;
+    line-height: 70px;
+}
+.app-class-one-icon.app-payment-icon{
+    background-position: -31px -30px;
+}
+.app-class-one-icon.app-fb-icon{
+    background-position: -201px -30px;
+}
+.app-class-one-icon.app-settings-icon{
+    background-position: -370px -30px;
+}
+.app-class-one-icon.app-reports-icon{
+    background-position: -541px -30px;
+}
+.app-class-one-icon.app-employees-icon{
+    background-position: -715px -30px;
+}
+.app-class-one-icon.app-customers-icon{
+    background-position: -881px -30px;
+}
+.app-class-one-icon.app-helps-icon{
+    background-position: -31px -179px;
+}
+.app-class-one-icon.app-authorizations-icon{
+    background-position: -201px -179px;
+}
+.app-class-one-icon.app-printers-icon{
+    background-position: -370px -179px;
+}
+
+
+/** app icon  E**/

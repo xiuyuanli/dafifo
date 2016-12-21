@@ -1,0 +1,22 @@
+.app-warp{
+    height: 100%;
+}
+.app-warp .app{
+    height: 100%;
+}
+.app-warp .app-header-fixed{
+    padding-top : 50px;
+    padding-bottom : 51px;
+}
+.app-warp .navbar{
+    min-height : 50px;
+}
+.app-warp .app-content{
+    margin-left: 0px;
+}
+.app-warp .app-footer{
+    margin-left: 0px;
+    background: #1a1a1a;
+    border-bottom: 1px solid #353535;
+    font-family: 'Montserrat', sans-serif;
+}
