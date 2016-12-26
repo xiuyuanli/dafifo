@@ -1,10 +1,10 @@
 <div class="wrapper-md">
         <div class="panel panel-default cell">
             <div class="panel-heading">
-                <button class="btn m-b-xs w-xs btn-info">新增模块</button>
-                <button class="btn m-b-xs w-xs btn-info">新增应用</button>
-                <button class="btn m-b-xs w-xs btn-info">编辑</button>
-                <button class="btn m-b-xs w-xs btn-info">删除</button>
+                <button class="btn m-b-xs w-xs btn-info" ng-click="add()">新增</button>
+                <button class="btn m-b-xs w-xs btn-info" ng-click="edit()">编辑</button>
+                <button class="btn m-b-xs w-xs btn-info" ng-click="delete()">删除</button>
+                <button class="btn m-b-xs w-xs btn-info" ng-click="mgButton()">分配按钮</button>
             </div>
             <div class="panel-body">
                 <tree-grid
@@ -157,22 +157,56 @@
             </div>
         </div>
         <div class="modal fade" id="module" tabindex="-1" role="dialog" ng-show="true" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
+            <div class="modal-dialog modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close"data-dismiss="modal" aria-hidden="true">
                             &times;
                         </button>
-                        <h6 class="modal-title">
-                            information
+                        <h6 class="modal-title font-bold">
+                            Information
                         </h6>
                     </div>
                     <div class="modal-body">
-
+                        <form class="bs-example form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">名称</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">模块编号</label>
+                                <div class="col-lg-9">
+                                    <input type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">父节点名称</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">路径</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-offset-3 col-lg-9">
+                                    <div class="checkbox">
+                                        <label class="i-checks">
+                                            <input type="checkbox" checked=""><i></i>是否有效
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                     <div class="modal-footer text-center">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">NO</button>
-                        <button type="button" class="btn btn-info"  data-dismiss="modal" ng-click="deleteItem()">YES</button>
+                        <button type="button" class="btn btn-sm btn-info w-xs" data-dismiss="modal">Save</button>
+                        <button type="button" class="btn btn-sm btn-info w-xs"  data-dismiss="modal" ng-click="deleteItem()">Cancle</button>
                     </div>
                 </div>
             </div>

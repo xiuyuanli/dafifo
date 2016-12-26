@@ -15,14 +15,14 @@
               <table class=\"table table-bordered table-hover tree-grid\">\
                   <thead class=\"text-primary\">\
                   <tr>\
-                      <th ng-repeat=\"col in colDefinitions\">{{col.displayName || col.field}}</th>\
+                      <th class=\"text-center\" ng-repeat=\"col in colDefinitions\">{{col.displayName || col.field}}</th>\
                   </tr>\
                   </thead>\
                   <tbody>\
                   <tr ng-repeat=\"row in tree_rows | filter:{visible:true} track by $index\"\
                       ng-click=\"row.branch.expanded = !row.branch.expanded;user_clicks_branch(row.branch)\"\
                       ng-class=\"'level-' + {{ row.level }} + (row.branch.selected ? ' active':'')\" class=\"tree-grid-row\">\
-                      <td  ng-repeat=\"col in colDefinitions\" ng-class=\"{true:'text-primary',false:''}[$index == 0]\" >\
+                      <td  ng-repeat=\"col in colDefinitions\" ng-class=\"{true:'text-primary',false:'text-center'}[$index == 0]\" >\
                         <a ng-if=' $index == 0 '>\
                           <i ng-class=\"row.tree_icon\"class=\"indented tree-icon\"></i>\
                         </a>\
