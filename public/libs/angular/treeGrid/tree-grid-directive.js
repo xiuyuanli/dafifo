@@ -12,23 +12,23 @@
         //template:"<div><table class=\"table table-bordered table-striped tree-grid\"><thead class=\"text-primary\"><tr><th>{{expandingProperty}}</th><th ng-repeat=\"col in colDefinitions\">{{col.displayName || col.field}}</th></tr></thead><tbody><tr ng-repeat=\"row in tree_rows | filter:{visible:true} track by row.branch.uid\" ng-class=\"'level-' + {{ row.level }} + (row.branch.selected ? ' active':'')\" class=\"tree-grid-row\"><td class=\"text-primary\"><a ng-click=\"user_clicks_branch(row.branch)\"><i ng-class=\"row.tree_icon\" ng-click=\"row.branch.expanded = !row.branch.expanded\" class=\"indented tree-icon\"></i></a><span class=\"indented tree-label\">{{row.branch[expandingProperty]}}</span></td><td ng-repeat=\"col in colDefinitions\">{{row.branch[col.field]}}</td></tr></tbody><table></div>",
         template:
           "<div>\
-              <table class=\"table table-bordered table-striped tree-grid\">\
+              <table class=\"table table-bordered table-hover tree-grid\">\
                   <thead class=\"text-primary\">\
                   <tr>\
-                      <th>{{expandingProperty}}</th>\
                       <th ng-repeat=\"col in colDefinitions\">{{col.displayName || col.field}}</th>\
                   </tr>\
                   </thead>\
                   <tbody>\
                   <tr ng-repeat=\"row in tree_rows | filter:{visible:true} track by $index\"\
+                      ng-click=\"row.branch.expanded = !row.branch.expanded;user_clicks_branch(row.branch)\"\
                       ng-class=\"'level-' + {{ row.level }} + (row.branch.selected ? ' active':'')\" class=\"tree-grid-row\">\
-                      <td class=\"text-primary\"><a ng-click=\"user_clicks_branch(row.branch)\"><i ng-class=\"row.tree_icon\"\
-                                 ng-click=\"row.branch.expanded = !row.branch.expanded\"\
-                                 class=\"indented tree-icon\"></i>\
-                          </a><span class=\"indented tree-label\" ng-click=\"user_clicks_branch(row.branch)\">\
-                            {{row.branch[expandingProperty]}}</span>\
+                      <td  ng-repeat=\"col in colDefinitions\" ng-class=\"{true:'text-primary',false:''}[$index == 0]\" >\
+                        <a ng-if=' $index == 0 '>\
+                          <i ng-class=\"row.tree_icon\"class=\"indented tree-icon\"></i>\
+                        </a>\
+                        <span ng-if=' $index == 0 ' class=\"indented tree-label\">{{row.branch[col.field]}}</span>\
+                          <span ng-if=' $index != 0 '>{{row.branch[col.field]}}</span>\
                       </td>\
-                      <td ng-repeat=\"col in colDefinitions\">{{row.branch[col.field]}}</td>\
                   </tr>\
                   </tbody>\
               </table>\

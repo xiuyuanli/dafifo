@@ -2,17 +2,42 @@
         <div class="panel panel-default cell">
             <div class="panel-heading">
                 <button class="btn m-b-xs w-xs btn-info">新增模块</button>
-                <button class="btn m-b-xs w-xs btn-info">新增作业</button>
+                <button class="btn m-b-xs w-xs btn-info">新增应用</button>
                 <button class="btn m-b-xs w-xs btn-info">编辑</button>
                 <button class="btn m-b-xs w-xs btn-info">删除</button>
             </div>
             <div class="panel-body">
-                <div class="row">
+                <tree-grid
+                        tree-data="tree_data"
+                        col-defs      = "col_defs"
+                        icon-leaf     = "fa fa-chain"
+                        icon-expand   = "fa fa-plus-square"
+                        icon-collapse = "fa fa-minus-square"
+                        on-select     = "my_tree_handler(branch)"
+                        on-click      = "my_tree_handler(branch)"
+                        expand-on="expanding_property"
+                >
+                </tree-grid>
+                <!--<tree-grid
+                        tree-data     = "tree_data"
+                        col-defs      = "col_defs"
+                        expand-on     = "expanding_property"
+                        tree-control  = "my_tree"
+                        icon-leaf     = "icon-file"
+                        icon-expand   = "icon-plus-sign"
+                        icon-collapse = "icon-minus-sign"
+                        on-select     = "my_tree_handler(branch)"
+                        on-click      = "my_tree_handler(branch)"
+                        template-url  = "path/to/treegrid/template.html"
+                        expand-level  = "2"
+                        expand-to     = "expand_to">
+                </tree-grid>-->
+                <!--<div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <tree-view tree-data="tree" text-field="name" value-field='id' item-clicked="itemClicked($item)" item-checked-changed="itemCheckedChanged($item)" can-checked="true" ></tree-view>
+                        <tree-view tree-data="tree" text-field="name" value-field='id' item-clicked="itemClicked($item)" item-checked-changed="itemCheckedChanged($item)" can-checked="false" ></tree-view>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-6 col-xs-6">
-                        <div class="panel">
+                        <div class="panel" ng-show="false">
                             <div class="panel-heading">
                                 模块管理
                             </div>
@@ -36,7 +61,7 @@
                                             <textarea rows="3" class="form-control"></textarea>
                                         </div>
                                     </div>
-                                    <!--<div class="form-group">
+                                    &lt;!&ndash;<div class="form-group">
                                         <div class="col-lg-offset-2 col-lg-10">
                                             <div class="checkbox">
                                                 <label class="i-checks">
@@ -44,7 +69,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                    </div>-->
+                                    </div>&ndash;&gt;
                                     <div class="form-group">
                                         <div class="col-lg-offset-2 col-lg-10">
                                             <button type="submit" class="btn btn-sm btn-info w-xs">Save</button>
@@ -54,6 +79,100 @@
                                 </form>
                             </div>
                         </div>
+                        <div class="panel">
+                            <div class="panel-heading">
+                                作业管理
+                            </div>
+                            <div class="panel-body">
+                                <form class="bs-example form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label">标识</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" class="form-control" placeholder="ModuleMgr">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label">名称</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" class="form-control" placeholder="Nane">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label">排序ID</label>
+                                        <div class="col-lg-10">
+                                            <input type="number" class="form-control" placeholder="ID">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label">备注</label>
+                                        <div class="col-lg-10">
+                                            <textarea rows="3" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-offset-2 col-lg-10">
+                                            <div class="checkbox">
+                                                <label class="i-checks">
+                                                    <input type="checkbox" checked=""><i></i>是否禁用
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label">按钮控制</label>
+                                        <div class="col-lg-10">
+                                            <button class="btn btn-default" ui-toggle-class="btn-success">
+                                                <span class="text">查看</span>
+                                                <i class="fa fa-check text-active"></i>
+                                                <span class="text-active">查看</span>
+                                            </button>
+                                            <button class="btn btn-default" ui-toggle-class="btn-success">
+                                                <span class="text">新增</span>
+                                                <i class="fa fa-check text-active"></i>
+                                                <span class="text-active">新增</span>
+                                            </button>
+                                            <button class="btn btn-default" ui-toggle-class="btn-success">
+                                                <span class="text">修改</span>
+                                                <i class="fa fa-check text-active"></i>
+                                                <span class="text-active">修改</span>
+                                            </button>
+                                            <button class="btn btn-default" ui-toggle-class="btn-success">
+                                                <span class="text">删除</span>
+                                                <i class="fa fa-check text-active"></i>
+                                                <span class="text-active">删除</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-offset-2 col-lg-10">
+                                            <button type="submit" class="btn btn-sm btn-info w-xs">Save</button>
+                                            <button type="reset" class="btn btn-sm btn-info w-xs">Cancle</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+        <div class="modal fade" id="module" tabindex="-1" role="dialog" ng-show="true" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close"data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h6 class="modal-title">
+                            information
+                        </h6>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">NO</button>
+                        <button type="button" class="btn btn-info"  data-dismiss="modal" ng-click="deleteItem()">YES</button>
                     </div>
                 </div>
             </div>

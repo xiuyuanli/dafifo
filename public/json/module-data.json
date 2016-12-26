@@ -1,0 +1,62 @@
+[
+  {
+    "name" : "权限应用",
+    "code" : 10000,
+    "parentName" : "系统",
+    "url" : "",
+    "disable" : true,
+    "sort" : 1,
+    "children" : [{
+        "name" : "模块管理",
+        "code" : 10001,
+        "parentName" : "权限应用",
+        "url" : "/module",
+        "disable" : true,
+        "sort" : 1
+    },{
+        "name" : "角色管理",
+        "code" : 10002,
+        "parentName" : "权限应用",
+        "url" : "/role",
+        "disable" : true,
+        "sort" : 2
+    },{
+        "name" : "用户管理",
+        "code" : 10003,
+        "parentName" : "权限应用",
+        "url" : "/user",
+        "disable" : true,
+        "sort" : 3
+    }]
+  },
+  {
+    "name" : "权限应用",
+    "code" : 20000,
+    "parentName" : "系统",
+    "url" : "",
+    "disable" : true,
+    "sort" : 2,
+    "children" : [{
+      "name" : "模块管理",
+      "code" : 20001,
+      "parentName" : "权限应用",
+      "url" : "/module",
+      "disable" : true,
+      "sort" : 1
+    },{
+      "name" : "角色管理",
+      "code" : 20002,
+      "parentName" : "权限应用",
+      "url" : "/role",
+      "disable" : true,
+      "sort" : 2
+    },{
+      "name" : "用户管理",
+      "code" : 20003,
+      "parentName" : "权限应用",
+      "url" : "/user",
+      "disable" : true,
+      "sort" : 3
+    }]
+  }
+]

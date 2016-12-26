@@ -28,6 +28,8 @@ dafifoApp.constant('JQ_CONFIG', {
         name:"dafifo.module",
         module:true,
         files:[
+            'libs/angular/treeGrid/treeGrid.css',
+            'libs/angular/treeGrid/tree-grid-directive.js',
             'js/permission/module.js'
         ]
     },
@@ -38,6 +40,7 @@ dafifoApp.constant('JQ_CONFIG', {
             'js/permission/user.js'
         ]
     }
+
 ])
 .config(['$ocLazyLoadProvider', 'MODULE_CONFIG', function($ocLazyLoadProvider, MODULE_CONFIG) {
         $ocLazyLoadProvider.config({

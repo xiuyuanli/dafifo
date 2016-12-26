@@ -11,7 +11,7 @@
         return factory(angular);
     }
 }(window.angular || null, function(angular) {
-    var app = angular.module('dafifo.module', []);
+    var app = angular.module('dafifo.module', ['treeGrid']);
 
     app.controller('dafifo.module.moduleController', ['$scope','$rootScope','$state','dafifo.module.moduleFactory',function($scope,$rootScope,$state,fac) {
         $scope.$parent.activeApp  = "main.module";
@@ -31,7 +31,7 @@
             $scope.$parent.tableArray.push(moduleDetail);
         };
 
-        $scope.tree = [
+        /*$scope.tree = [
             {
                 "id":"1",
                 "pid":"0",
@@ -129,28 +129,57 @@
                     }
                 ]
             }
+        ];*/
+        $scope.col_defs = [
+            {
+                field: "name",
+                displayName: "模块（菜单）名称"
+            },
+            {
+                field: "code",
+                displayName: "模块编码"
+            },
+            {
+                field: "parentName",
+                displayName: "父节点名称"
+            },
+            {
+                field: "url",
+                displayName: "路径"
+            },
+            {
+                field: "disable",
+                displayName: "是否有效",
+                cellTemplate: "<input type='checkbox' ng-checked='{{ row.branch[col.field] }}' />",
+            },
+            {
+                field: "sort",
+                displayName: "排序"
+            }
         ];
-
-        $scope.itemClicked = function ($item) {
-            //vm.selectedItem = $item;
-            console.log($item, 'item clicked');
+        $scope.tree_data = [];
+        fac.getModuleData({},function(data){
+            $scope.tree_data = data;
+        });
+        $scope.expandingProperty = "模块（菜单）名称";
+        $scope.my_tree_handler = function(branch){
+            //$('#module').modal('show')
         };
-
-        $scope.itemCheckedChanged = function($item){
-            //$http.post('/url', $item);
-            console.log($item,'item checked');
-        };
-
-
     }]);
 
     app.factory('dafifo.module.moduleFactory', ['$http',function($http){
         return {
-
+            getModuleData : function(params,callback){
+                $http.get('/json/module-data.json').success(function(data, header, config, status){
+                    if(data){
+                        return callback && callback(data);
+                    }
+                });
+            }
         };
     }]);
 
-    app.directive('treeView',[function(){
+    /*app.directive('treeView',[function(){
         return {
             restrict: 'E',
             templateUrl: '/treeView.html',
@@ -188,7 +217,7 @@
                 };
             }]
         };
-    }]);
+    }]);*/
 
     return app;
 }));
