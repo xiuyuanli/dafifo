@@ -1,0 +1,41 @@
+<div class="wrapper-md">
+    <div class="panel panel-default cell">
+        <div class="panel-heading">
+            <button class="btn m-b-xs w-xs btn-info" ng-click="add()">新增</button>
+            <button class="btn m-b-xs w-xs btn-info" ng-click="edit()">编辑</button>
+            <button class="btn m-b-xs w-xs btn-info" ng-click="delete()">删除</button>
+            <button class="btn m-b-xs w-xs btn-info" ng-click="mgButton()">分配权限</button>
+        </div>
+        <div class="panel-body">
+            <div>
+                <div class="table-responsive">
+                    <table class="table table-striped b-t b-light">
+                        <thead>
+                            <tr>
+                                <th class="text-center">角色名称</th>
+                                <th class="text-center">角色状态</th>
+                                <th class="text-center">创建用户</th>
+                                <th class="text-center">创建时间</th>
+                                <th class="text-center">修改用户</th>
+                                <th class="text-center">修改时间</th>
+                                <th class="text-center">描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="row in roleData">
+                                <td><span class="text-ellipsis text-center">{row.name}</span></td>
+                                <td><span class="text-ellipsis text-center">{row.status}</span></td>
+                                <td><span class="text-ellipsis text-center">{row.createUser}</span></td>
+                                <td><span class="text-ellipsis text-center">{row.createTime}</span></td>
+                                <td><span class="text-ellipsis text-center">{row.modifyUser}</span></td>
+                                <td><span class="text-ellipsis text-center">{row.modifyTime}</span></td>
+                                <td><span class="text-ellipsis text-center">{row.desc}</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <tm-pagination conf="paginationConf"></tm-pagination>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
