@@ -1,3 +1,41 @@
 <div class="wrapper-md">
-      BBBBBBBBBBBBBBBBBBBBBBB
+      <div class="panel panel-default cell">
+            <div class="panel-heading">
+                  <button class="btn m-b-xs w-xs btn-info" ng-click="add()">新增</button>
+                  <button class="btn m-b-xs w-xs btn-info" ng-click="edit()">编辑</button>
+                  <button class="btn m-b-xs w-xs btn-info" ng-click="delete()">删除</button>
+                  <button class="btn m-b-xs w-xs btn-info" ng-click="mgButton()">分配权限</button>
+            </div>
+            <div class="panel-body">
+                  <div>
+                        <div class="table-responsive">
+                              <table class="table table-striped b-t b-light">
+                                    <thead>
+                                          <tr>
+                                                <th class="text-center">工号</th>
+                                                <th class="text-center">用户姓名</th>
+                                                <th class="text-center">登录账户</th>
+                                                <th class="text-center">性别</th>
+                                                <th class="text-center">职称</th>
+                                                <th class="text-center">状态</th>
+                                                <th class="text-center">备注</th>
+                                          </tr>
+                                    </thead>
+                                    <tbody>
+                                          <tr ng-repeat="row in roleData">
+                                                <td><span class="text-ellipsis text-center">{row.workNo}</span></td>
+                                                <td><span class="text-ellipsis text-center">{row.name}</span></td>
+                                                <td><span class="text-ellipsis text-center">{row.account}</span></td>
+                                                <td><span class="text-ellipsis text-center">{row.sex}</span></td>
+                                                <td><span class="text-ellipsis text-center">{row.title}</span></td>
+                                                <td><span class="text-ellipsis text-center">{row.status}</span></td>
+                                                <td><span class="text-ellipsis text-center">{row.desc}</span></td>
+                                          </tr>
+                                    </tbody>
+                              </table>
+                              <tm-pagination conf="paginationConf"></tm-pagination>
+                        </div>
+                  </div>
+            </div>
+      </div>
 </div>

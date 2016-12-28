@@ -37,7 +37,18 @@ dafifoApp.constant('JQ_CONFIG', {
         name:"dafifo.user",
         module:true,
         files:[
+            'libs/angular/tm.pagination/tm.pagination.css',
+            'libs/angular/tm.pagination/tm.pagination.js',
             'js/permission/user.js'
+        ]
+    },
+    {
+        name:"dafifo.role",
+        module:true,
+        files:[
+            'libs/angular/tm.pagination/tm.pagination.css',
+            'libs/angular/tm.pagination/tm.pagination.js',
+            'js/permission/role.js'
         ]
     }
 

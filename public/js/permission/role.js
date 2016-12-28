@@ -1,4 +1,7 @@
 /**
+ * Created by warren on 2016/12/28.
+ */
+/**
  * Created by warren on 2016/12/20.
  */
 /**
@@ -14,13 +17,13 @@
         return factory(angular);
     }
 }(window.angular || null, function(angular) {
-    var app = angular.module('dafifo.user', []);
+    var app = angular.module('dafifo.role', ['tm.pagination']);
 
-    app.controller('dafifo.user.userController', ['$scope','$rootScope','$state','$stateParams','dafifo.user.userFactory',function($scope,$rootScope,$state,$stateParams,fac) {
-        $scope.$parent.activeApp  = "main.user";
+    app.controller('dafifo.role.roleController', ['$scope','$rootScope','$state','$stateParams','dafifo.role.roleFactory',function($scope,$rootScope,$state,$stateParams,fac) {
+        $scope.$parent.activeApp  = "main.role";
         var moduleDetail = {
-            "text" : "用户管理",
-            "href" : "main.user"
+            "text" : "角色管理",
+            "href" : "main.role"
         };
         $scope.isOpen = false;
         for(var i=0;i<$scope.$parent.tableArray.length;i++){
@@ -33,6 +36,7 @@
         if(!$scope.isOpen){
             $scope.$parent.tableArray.push(moduleDetail);
         }
+
         $scope.paginationConf = {
             currentPage: 1,
             totalItems: 8,
@@ -43,9 +47,10 @@
 
             }
         };
+
     }]);
 
-    app.factory('dafifo.user.userFactory', ['$http',function($http){
+    app.factory('dafifo.role.roleFactory', ['$http',function($http){
         return {
 
         };

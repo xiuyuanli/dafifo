@@ -39,6 +39,16 @@ dafifoApp.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG', 'MODULE_C
                     }
                 },
                 resolve: loadSequence(['dafifo.user'])
+            }).state("main.role",{
+                url:"/role",
+                cache:false,
+                views:{
+                    'mainboard@main':{
+                        controller:'dafifo.role.roleController',
+                        templateUrl:"tpl/permission/role.html"
+                    }
+                },
+                resolve: loadSequence(['dafifo.role'])
             });
 
             function loadSequence(srcs, callback) {
