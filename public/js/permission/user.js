@@ -14,7 +14,7 @@
         return factory(angular);
     }
 }(window.angular || null, function(angular) {
-    var app = angular.module('dafifo.user', []);
+    var app = angular.module('dafifo.user', ['tm.pagination']);
 
     app.controller('dafifo.user.userController', ['$scope','$rootScope','$state','$stateParams','dafifo.user.userFactory',function($scope,$rootScope,$state,$stateParams,fac) {
         $scope.$parent.activeApp  = "main.user";
@@ -33,9 +33,16 @@
         if(!$scope.isOpen){
             $scope.$parent.tableArray.push(moduleDetail);
         }
+        fac.getUser({},function(data){
+            $scope.userData = data.root;
+            $scope.paginationConf.totalItems = data.totalCount;
+        });
+        $scope.ngClick = function(row){
+            $scope.index = $scope.userData.indexOf(row);
+        };
         $scope.paginationConf = {
             currentPage: 1,
-            totalItems: 8,
+            totalItems: 0,
             itemsPerPage: 15,
             pagesLength: 15,
             perPageOptions: [10, 20, 30, 40, 50],
@@ -47,7 +54,13 @@
 
     app.factory('dafifo.user.userFactory', ['$http',function($http){
         return {
-
+            getUser : function(params, callback ){
+                $http.get('/json/user-data.json').success(function(data, header, config, status){
+                    if(data){
+                        return callback && callback(data);
+                    }
+                });
+            }
         };
     }]);
 

@@ -9,7 +9,7 @@
         <div class="panel-body">
             <div>
                 <div class="table-responsive">
-                    <table class="table table-striped b-t b-light">
+                    <table class="table table-hover b-t b-light">
                         <thead>
                             <tr>
                                 <th class="text-center">角色名称</th>
@@ -22,14 +22,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="row in roleData">
-                                <td><span class="text-ellipsis text-center">{row.name}</span></td>
-                                <td><span class="text-ellipsis text-center">{row.status}</span></td>
-                                <td><span class="text-ellipsis text-center">{row.createUser}</span></td>
-                                <td><span class="text-ellipsis text-center">{row.createTime}</span></td>
-                                <td><span class="text-ellipsis text-center">{row.modifyUser}</span></td>
-                                <td><span class="text-ellipsis text-center">{row.modifyTime}</span></td>
-                                <td><span class="text-ellipsis text-center">{row.desc}</span></td>
+                            <tr ng-repeat="row in roleData track by $index">
+                                <td><span class="text-ellipsis text-center">{{row.name}}</span></td>
+                                <td><span class="text-ellipsis text-center">{{row.status}}</span></td>
+                                <td><span class="text-ellipsis text-center">{{row.createUser}}</span></td>
+                                <td><span class="text-ellipsis text-center">{{row.createTime}}</span></td>
+                                <td><span class="text-ellipsis text-center">{{row.modifyUser}}</span></td>
+                                <td><span class="text-ellipsis text-center">{{row.modifyTime}}</span></td>
+                                <td><span class="text-ellipsis text-center">{{row.desc}}</span></td>
                             </tr>
                         </tbody>
                     </table>

@@ -37,6 +37,11 @@
             $scope.$parent.tableArray.push(moduleDetail);
         }
 
+        fac.getRole({},function(data){
+            $scope.roleData = data.root;
+            $scope.paginationConf.totalItems = data.totalCount;
+        });
+
         $scope.paginationConf = {
             currentPage: 1,
             totalItems: 8,
@@ -52,7 +57,13 @@
 
     app.factory('dafifo.role.roleFactory', ['$http',function($http){
         return {
-
+            getRole : function( params,callback ){
+                $http.get('/json/role-data.json').success(function(data, header, config, status){
+                    if(data){
+                        return callback && callback(data);
+                    }
+                });
+            }
         };
     }]);
 
