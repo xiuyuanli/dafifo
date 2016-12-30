@@ -4,7 +4,7 @@
                   <button class="btn m-b-xs w-xs btn-info" ng-click="add()">新增</button>
                   <button class="btn m-b-xs w-xs btn-info" ng-click="edit()">编辑</button>
                   <button class="btn m-b-xs w-xs btn-info" ng-click="delete()">删除</button>
-                  <button class="btn m-b-xs w-xs btn-info" ng-click="mgButton()">分配权限</button>
+                  <button class="btn m-b-xs w-xs btn-info" ng-click="mgPermission()">分配权限</button>
             </div>
             <div class="panel-body">
                   <div>
@@ -22,7 +22,7 @@
                                           </tr>
                                     </thead>
                                     <tbody>
-                                          <tr ng-class="{true : active, false : ''}[index==$index]" ng-repeat="row in userData track by $index"  ng-click="ngClick(row)">
+                                          <tr ng-class="{true: 'active', false: 'inactive'}[row==selectRow]" ng-repeat="row in userData track by $index"  ng-click="rowSelect(row)">
                                                 <td><span class="text-ellipsis text-center">{{row.workNo}}</span></td>
                                                 <td><span class="text-ellipsis text-center">{{row.name}}</span></td>
                                                 <td><span class="text-ellipsis text-center">{{row.account}}</span></td>
@@ -38,4 +38,82 @@
                   </div>
             </div>
       </div>
+
+      <div class="modal fade" id="userModal" tabindex="-1" role="dialog" ng-show="true" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                  <div class="modal-content">
+                        <div class="modal-header">
+                              <button type="button" class="close"data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                              </button>
+                              <h6 class="modal-title font-bold">
+                                    Information
+                              </h6>
+                        </div>
+                        <div class="modal-body">
+                              <form class="bs-example form-horizontal">
+                                    <div class="form-group">
+                                          <label class="col-lg-3 control-label">用户工号</label>
+                                          <div class="col-lg-9">
+                                                <input type="text" class="form-control">
+                                          </div>
+                                    </div>
+                                    <div class="form-group">
+                                          <label class="col-lg-3 control-label">用户姓名</label>
+                                          <div class="col-lg-9">
+                                                <input type="text" class="form-control">
+                                          </div>
+                                    </div>
+                                    <div class="form-group">
+                                          <label class="col-lg-3 control-label">登录账号</label>
+                                          <div class="col-lg-9">
+                                                <input type="text" class="form-control">
+                                          </div>
+                                    </div>
+                                    <div class="form-group">
+                                          <label class="col-lg-3 control-label">登录密码</label>
+                                          <div class="col-lg-9">
+                                                <input type="password" class="form-control">
+                                          </div>
+                                    </div>
+                                    <div class="form-group">
+                                          <label class="col-lg-3 control-label">性别</label>
+                                          <div class="col-lg-9">
+                                                <label class="i-checks i-checks-sm">
+                                                      <input type="radio" name="a" value="male">
+                                                      <i></i>
+                                                      男
+                                                </label>
+                                                <label class="i-checks i-checks-sm">
+                                                      <input type="radio" name="a" value="female">
+                                                      <i></i>
+                                                      女
+                                                </label>
+                                          </div>
+                                    </div>
+                                    <div class="form-group">
+                                          <div class="col-lg-offset-3 col-lg-9">
+                                                <div class="checkbox">
+                                                      <label class="i-checks">
+                                                            <input type="checkbox" checked=""><i></i>是否有效
+                                                      </label>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="form-group">
+                                          <label class="col-lg-3 control-label">备注</label>
+                                          <div class="col-lg-9">
+                                                <textarea rows="3" class="form-control"></textarea>
+                                          </div>
+                                    </div>
+                              </form>
+                        </div>
+                        <div class="modal-footer text-center">
+                              <button type="button" class="btn btn-sm btn-info w-xs" data-dismiss="modal">Save</button>
+                              <button type="button" class="btn btn-sm btn-info w-xs"  data-dismiss="modal" ng-click="deleteItem()">Cancle</button>
+                        </div>
+                  </div>
+            </div>
+      </div>
+
 </div>

@@ -22,7 +22,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="row in roleData track by $index">
+                            <tr ng-class="{true: 'active', false: 'inactive'}[row==selectRow]" ng-repeat="row in roleData track by $index"  ng-click="rowSelect(row)">
                                 <td><span class="text-ellipsis text-center">{{row.name}}</span></td>
                                 <td><span class="text-ellipsis text-center">{{row.status}}</span></td>
                                 <td><span class="text-ellipsis text-center">{{row.createUser}}</span></td>
@@ -38,4 +38,48 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="roleModal" tabindex="-1" role="dialog" ng-show="true" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h6 class="modal-title font-bold">
+                        Information
+                    </h6>
+                </div>
+                <div class="modal-body">
+                    <form class="bs-example form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">角色名称</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-3 col-lg-9">
+                                <div class="checkbox">
+                                    <label class="i-checks">
+                                        <input type="checkbox" checked=""><i></i>是否有效
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">备注</label>
+                            <div class="col-lg-9">
+                                <textarea rows="3" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" class="btn btn-sm btn-info w-xs" data-dismiss="modal">Save</button>
+                    <button type="button" class="btn btn-sm btn-info w-xs"  data-dismiss="modal" ng-click="deleteItem()">Cancle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

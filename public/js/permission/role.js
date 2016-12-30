@@ -30,18 +30,25 @@
             var tab = $scope.$parent.tableArray[i];
             if(tab.text == moduleDetail.text && tab.href == moduleDetail.href){
                 $scope.isOpen = true;
-                return;
+                break;
             }
         }
         if(!$scope.isOpen){
             $scope.$parent.tableArray.push(moduleDetail);
         }
 
+        /** 行选择 **/
+        $scope.rowSelect = function(row){
+            $scope.selectRow = row;
+        };
+
+        /** 获取角色信息 **/
         fac.getRole({},function(data){
             $scope.roleData = data.root;
             $scope.paginationConf.totalItems = data.totalCount;
         });
 
+        /** 分页 **/
         $scope.paginationConf = {
             currentPage: 1,
             totalItems: 8,
@@ -51,6 +58,23 @@
             onChange: function(){
 
             }
+        };
+
+        /** 添加角色 **/
+        $scope.add = function(){
+            $('#roleModal').modal('show');
+        };
+        /** 修改角色 **/
+        $scope.edit = function(){
+            $('#roleModal').modal('show');
+        };
+        /** 删除角色 **/
+        $scope.delete = function(){
+
+        };
+        /** 分配角色权限 **/
+        $scope.mgButton = function(){
+
         };
 
     }]);

@@ -27,19 +27,23 @@
             var tab = $scope.$parent.tableArray[i];
             if(tab.text == moduleDetail.text && tab.href == moduleDetail.href){
                 $scope.isOpen = true;
-                return;
+                break;
             }
         }
         if(!$scope.isOpen){
             $scope.$parent.tableArray.push(moduleDetail);
         }
+
+        /** 行选择 **/
+        $scope.rowSelect = function(row){
+            $scope.selectRow = row;
+        };
+        /** 获取列表数据 **/
         fac.getUser({},function(data){
             $scope.userData = data.root;
             $scope.paginationConf.totalItems = data.totalCount;
         });
-        $scope.ngClick = function(row){
-            $scope.index = $scope.userData.indexOf(row);
-        };
+        /** 分页 **/
         $scope.paginationConf = {
             currentPage: 1,
             totalItems: 0,
@@ -50,6 +54,24 @@
 
             }
         };
+        /** 添加用户 **/
+        $scope.add = function(){
+            $('#userModal').modal('show');
+        };
+        /** 修改用户 **/
+        $scope.edit = function(){
+            $('#userModal').modal('show');
+        };
+        /** 删除用户 **/
+        $scope.delete = function(){
+
+        };
+        /** 分配用户权限 **/
+        $scope.mgPermission = function(){
+
+        };
+
+
     }]);
 
     app.factory('dafifo.user.userFactory', ['$http',function($http){
