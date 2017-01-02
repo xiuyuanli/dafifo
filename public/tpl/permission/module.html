@@ -211,4 +211,40 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="moduleToButton" tabindex="-1" role="dialog" ng-show="true" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h6 class="modal-title font-bold">
+                        Information
+                    </h6>
+                </div>
+                <div class="modal-body">
+                    <form class="bs-example form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">名称</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">图标选择</label>
+                            <div class="col-lg-9">
+                                <button class="btn btn-sm btn-default">
+                                    <i class="fa fa-plus text"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" class="btn btn-sm btn-info w-xs" data-dismiss="modal">Save</button>
+                    <button type="button" class="btn btn-sm btn-info w-xs"  data-dismiss="modal" ng-click="deleteItem()">Cancle</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

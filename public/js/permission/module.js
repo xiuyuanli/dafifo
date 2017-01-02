@@ -74,6 +74,10 @@
         $scope.delete = function(){
             $('#module').modal('show');
         }
+        $scope.mgButton = function(){
+            $('#moduleToButton').modal('show');
+        };
+
     }]);
 
     app.factory('dafifo.module.moduleFactory', ['$http',function($http){
