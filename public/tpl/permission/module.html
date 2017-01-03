@@ -223,26 +223,38 @@
                     </h6>
                 </div>
                 <div class="modal-body">
-                    <form class="bs-example form-horizontal">
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">名称</label>
-                            <div class="col-lg-9">
-                                <input type="text" class="form-control">
+                    <div class="row">
+                        <form class="bs-example form-horizontal col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">名称</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">链接地址</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="button" class="btn btn-sm btn-info w-xs">Save</button>
+                                <button type="button" class="btn btn-sm btn-info w-xs" ng-click="deleteItem()">Cancle</button>
+                            </div>
+                        </form>
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading font-bold">
+                                    已选按钮(双击删除)
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <button class="btn btn-default col-md-4 m-sm" ng-dblclick="deleteButton(button)" ng-repeat="button in buttonArray  track by $index">{{button.name}}</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">图标选择</label>
-                            <div class="col-lg-9">
-                                <button class="btn btn-sm btn-default">
-                                    <i class="fa fa-plus text"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer text-center">
-                    <button type="button" class="btn btn-sm btn-info w-xs" data-dismiss="modal">Save</button>
-                    <button type="button" class="btn btn-sm btn-info w-xs"  data-dismiss="modal" ng-click="deleteItem()">Cancle</button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -6,12 +6,14 @@
     "url" : "",
     "disable" : true,
     "sort" : 1,
+    "leaf" : false,
     "children" : [{
         "name" : "模块管理",
         "code" : 10001,
         "parentName" : "权限应用",
         "url" : "/module",
         "disable" : true,
+        "leaf" : true,
         "sort" : 1
     },{
         "name" : "角色管理",
@@ -19,6 +21,7 @@
         "parentName" : "权限应用",
         "url" : "/role",
         "disable" : true,
+        "leaf" : true,
         "sort" : 2
     },{
         "name" : "用户管理",
@@ -26,6 +29,7 @@
         "parentName" : "权限应用",
         "url" : "/user",
         "disable" : true,
+        "leaf" : true,
         "sort" : 3
     }]
   },
@@ -36,12 +40,14 @@
     "url" : "",
     "disable" : true,
     "sort" : 2,
+    "leaf" : false,
     "children" : [{
       "name" : "模块管理",
       "code" : 20001,
       "parentName" : "权限应用",
       "url" : "/module",
       "disable" : true,
+      "leaf" : true,
       "sort" : 1
     },{
       "name" : "角色管理",
@@ -49,6 +55,7 @@
       "parentName" : "权限应用",
       "url" : "/role",
       "disable" : true,
+      "leaf" : true,
       "sort" : 2
     },{
       "name" : "用户管理",
@@ -56,6 +63,7 @@
       "parentName" : "权限应用",
       "url" : "/user",
       "disable" : true,
+      "leaf" : true,
       "sort" : 3
     }]
   }

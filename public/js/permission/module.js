@@ -50,32 +50,44 @@
             },
             {
                 field: "disable",
-                displayName: "是否有效",
-                cellTemplate: "<input type='checkbox' ng-checked='{{ row.branch[col.field] }}' />",
+                displayName: "是否有效"
             },
             {
                 field: "sort",
                 displayName: "排序"
             }
         ];
+        /** 静态数据 **/
+        $scope.buttonArray = [{
+              name : 'test',
+              id : 123,
+              href : 'XXXX'
+        }];
+
         $scope.tree_data = [];
         fac.getModuleData({},function(data){
             $scope.tree_data = data;
         });
         $scope.my_tree_handler = function(branch){
-            //$('#module').modal('show')
+            $scope.selectRow = branch;
         };
         $scope.add = function(){
             $('#module').modal('show');
-        }
+        };
         $scope.edit = function(){
             $('#module').modal('show');
-        }
+        };
         $scope.delete = function(){
-            $('#module').modal('show');
-        }
+
+
+        };
+        $scope.deleteButton = function(button){
+            console.log(button);
+        };
         $scope.mgButton = function(){
-            $('#moduleToButton').modal('show');
+            if( $scope.selectRow && $scope.selectRow.leaf ){
+                $('#moduleToButton').modal('show');
+            }
         };
 
     }]);
